@@ -1,0 +1,47 @@
+<div class="sign_up_form">
+
+    <%= form_for(@account, url:'/registering') do |form| %>
+    <div class="sign_up_form_item">
+        <div class="sign_up_name_box">
+            <div class="sign_up_name_box_item">
+                <%= form.label :first_name, 'First Name:' %>
+                <%= form.text_field :first_name %>
+            </div>
+
+            <div class="sign_up_name_box_item">
+                <%= form.label :surname, 'Last Name:', class: "surname_label" %>
+                <%= form.text_field :surname %>
+            </div>
+        </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="sign_up_form_item">
+        <%= form.label :email, 'Email:' %><br>
+        <%= form.email_field :email %>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="sign_up_form_item">
+        <%= form.label :password, 'Password:' %><br>
+        <%= form.password_field :password %>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="sign_up_form_item">
+        <%= form.label :password, 'Repeat Password:' %><br>
+        <%= form.password_field :password_confirmation %>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="sign_up_form_item">
+        <%= form.submit 'Sign Up'%> 
+    </div>
+
+    <% end %>
+
+</div>
