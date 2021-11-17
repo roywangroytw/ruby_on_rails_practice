@@ -1,16 +1,23 @@
 <div class="sign_up_form">
 
-    <%= form_for(@account, url:'/registering') do |form| %>
+
+    <%= form_for(@account, url:'/sign_up/registering') do |form| %>
     <div class="sign_up_form_item">
         <div class="sign_up_name_box">
             <div class="sign_up_name_box_item">
                 <%= form.label :first_name, 'First Name:' %>
                 <%= form.text_field :first_name %>
+                <div class="form_error">
+                    <%= inline_errors(@account, :first_name) %>
+                </div>
             </div>
 
             <div class="sign_up_name_box_item">
                 <%= form.label :surname, 'Last Name:', class: "surname_label" %>
                 <%= form.text_field :surname %>
+                <div class="form_error">
+                    <%= inline_errors(@account, :surname) %>
+                </div>
             </div>
         </div>
     </div>
@@ -20,6 +27,9 @@
     <div class="sign_up_form_item">
         <%= form.label :email, 'Email:' %><br>
         <%= form.email_field :email %>
+        <div class="form_error">
+            <%= inline_errors(@account, :email) %>
+        </div>
     </div>
 
     <hr class="form-divider">
@@ -27,6 +37,9 @@
     <div class="sign_up_form_item">
         <%= form.label :password, 'Password:' %><br>
         <%= form.password_field :password %>
+        <div class="form_error">
+            <%= inline_errors(@account, :password) %>
+        </div>
     </div>
 
     <hr class="form-divider">
@@ -34,6 +47,9 @@
     <div class="sign_up_form_item">
         <%= form.label :password, 'Repeat Password:' %><br>
         <%= form.password_field :password_confirmation %>
+        <div class="form_error">
+            <%= inline_errors(@account, :password_confirmation) %>
+        </div>
     </div>
 
     <hr class="form-divider">

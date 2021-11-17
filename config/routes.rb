@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/contact", to: "pages#contact"
 
   get "/sign_up", to: "accounts#sign_up"
-  post "/registering", to: "accounts#registering"
+  post "/sign_up/registering", to: "accounts#registering"
 
   get "/login", to: "accounts#login"
   post "account_checking", to: "accounts#account_checking"
