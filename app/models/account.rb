@@ -1,13 +1,13 @@
+require 'digest'
+
+
 class Account < ApplicationRecord
 
 
-    # how to put customized error messages?
     validates :first_name, presence: true
     
-    # how to put customized error messages?
     validates :surname, presence: true
 
-    # how to put customized error messages?
     validates :password, length: { minimum: 6 , message: 'should have at least 6 characters'  }
 
     validates :password, confirmation: { case_sensitive: true , message: ' not matching'  }
@@ -18,6 +18,17 @@ class Account < ApplicationRecord
 
     validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/,
     message: "format is not correct" }
+
+    before_create :encrypt_password
+
+    private
+
+    def encrypt_password
+    
+        salted_password = "123#{self.password.reverse}xyz"
+        self.password = Digest::SHA1.hexdigest(salted_password)
+
+    end
 
 
 end

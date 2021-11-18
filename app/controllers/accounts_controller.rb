@@ -5,14 +5,8 @@ class AccountsController < ApplicationController
     end
 
     def registering
-
-    # puts "======================="
-    # puts params
-    # puts "======================="
-
-    clean_params = params.require(:account).permit(:first_name, :surname, :password, :email, :password_confirmation) 
     
-    @account = Account.new(clean_params)
+    @account = Account.new(account_params)
 
         if @account.save
             redirect_to "/"
@@ -26,5 +20,13 @@ class AccountsController < ApplicationController
 
     def account_checking
     end
+
+    private
+
+    def account_params
+
+        clean_params = params.require(:account).permit(:first_name, :surname, :password, :email, :password_confirmation) 
+        
+    end    
 
 end
