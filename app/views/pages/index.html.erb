@@ -1,0 +1,13 @@
+
+<% if is_login? %>
+    <div class="login-notice">
+        <p class="positive"><%= flash[:notice] %></p>
+    </div>
+<% else %>
+    <div class="login-notice">
+        <p class="negative"><%= flash[:notice] %></p>
+    </div>
+<% end %>
+
+
+<!-- 問龍哥！！！！ -->

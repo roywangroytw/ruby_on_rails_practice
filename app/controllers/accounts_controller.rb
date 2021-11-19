@@ -16,9 +16,22 @@ class AccountsController < ApplicationController
     end
 
     def login
+        @account = Account.new
     end
 
     def account_checking
+
+        user = Account.login(account_params)
+
+        if user
+            session[:session_id] = user.id
+            flash[:notice] = "Welcome back #{user.first_name}, good luck with your learning!"
+            redirect_to "/"
+        else
+            flash[:notice] = "Login has failed, please try again"
+            redirect_to "/"
+            # render html: "User not found!"
+        end    
     end
 
     private

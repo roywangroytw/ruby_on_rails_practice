@@ -1,0 +1,51 @@
+<section class="login_section">
+
+  <div class="login_section_content">
+
+    <div class="login-txt-box">
+      <h1 class="login_header">Great to see <span>you</span> again!</h1>
+      <p>We are adding tons of fun and informative courses every month, don't forget to come back often to explore your potential talents!</p>
+    </div>
+
+    <%= form_for(@account, url:'/login/account_checking') do |form| %>
+
+    <div class="login_form_item">
+      <%= form.label :email, 'Email:' %><br />
+      <%= form.email_field :email %>
+      <!-- <div class="form_error"><%= inline_errors(@account, :email) %></div> -->
+    </div>
+
+    <hr class="login_form-divider" />
+
+    <div class="login_form_item">
+      <%= form.label :password, 'Password:' %><br />
+      <%= form.password_field :password %>
+      <!-- <div class="form_error"><%= inline_errors(@account, :password) %></div> -->
+    </div>
+
+    <hr class="login_form-divider" />
+
+    <div class="login_form_item">
+      <%= form.submit 'Login Now'%>
+    </div>
+
+    <% end %>
+
+  </div>
+
+  <%= image_tag('login.png', class: "login_img") %>
+
+  <div class="deco">
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+      <div class="deco-item"></div>
+  </div>
+
+</section>

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   post "/sign_up/registering", to: "accounts#registering"
 
   get "/login", to: "accounts#login"
-  post "account_checking", to: "accounts#account_checking"
+  post "/login/account_checking", to: "accounts#account_checking"
 
 end

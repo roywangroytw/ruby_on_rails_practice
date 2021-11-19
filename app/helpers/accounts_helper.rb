@@ -19,7 +19,13 @@ module AccountsHelper
                 result += "<li>#{type} #{message}<li>"
             end
         end
+        
         return "<ul>#{result}</ul>".html_safe
-      end
+      
+    end
+
+    def is_login?
+        session[:session_id].present?
+    end
 
 end

@@ -19,6 +19,18 @@ class Account < ApplicationRecord
     validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/,
     message: "format is not correct" }
 
+    def self.login(login_info)
+    
+        email = login_info[:email]
+        password = login_info[:password]
+
+        salted_password = "123#{password.reverse}xyz"
+        encrypted_password = Digest::SHA1.hexdigest(salted_password)
+
+        Account.find_by(email: email, password: encrypted_password)
+
+    end
+
     before_create :encrypt_password
 
     private
