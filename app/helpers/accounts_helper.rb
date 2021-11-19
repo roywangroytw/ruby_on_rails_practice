@@ -25,7 +25,7 @@ module AccountsHelper
     end
 
     def is_login?
-        session[:session_id].present?
+        session[:abcd].present?
     end
 
 end

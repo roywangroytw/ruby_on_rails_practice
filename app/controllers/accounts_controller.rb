@@ -24,7 +24,7 @@ class AccountsController < ApplicationController
         user = Account.login(account_params)
 
         if user
-            session[:session_id] = user.id
+            session[:abcd] = user.id
             flash[:notice] = "Welcome back #{user.first_name}, good luck with your learning!"
             redirect_to "/"
         else
