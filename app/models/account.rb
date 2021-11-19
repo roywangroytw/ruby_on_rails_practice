@@ -14,10 +14,10 @@ class Account < ApplicationRecord
 
     validates :email, presence: true
 
-    validates :email, uniqueness: { message: 'already exists' }
-
     validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/,
     message: "format is not correct" }
+
+    validates :email, uniqueness: { message: 'already exists' }
 
     def self.login(login_info)
     

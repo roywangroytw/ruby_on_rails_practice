@@ -1,7 +1,9 @@
 module AccountsHelper
 
     def inline_errors(model, model_attribute)
+        
         result = ""
+
         if model_attribute == :first_name
             type = "First name"
         elsif model_attribute == :surname
@@ -15,12 +17,11 @@ module AccountsHelper
         end
                        
         if model.errors[model_attribute].any?
-             model.errors[model_attribute].each do |message|
-                result += "<li>#{type} #{message}<li>"
-            end
+             error_msg = model.errors[model_attribute].first 
+                result = "<li>#{type} #{error_msg}<li>"
         end
         
-        return "<ul>#{result}</ul>".html_safe
+        "<ul>#{result}</ul>".html_safe
       
     end
 

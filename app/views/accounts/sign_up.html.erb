@@ -31,7 +31,7 @@
 
     <div class="sign_up_form_item">
       <%= form.label :email, 'Email:' %><br />
-      <%= form.email_field :email %>
+      <%= form.text_field :email %>
       <div class="form_error"><%= inline_errors(@account, :email) %></div>
     </div>
 
