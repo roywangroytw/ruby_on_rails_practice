@@ -1,5 +1,15 @@
 <section class="login_section">
 
+  <!-- Adding login error message -->
+
+  <% if flash[:notice].present? %>
+
+    <div class="login-notice">
+      <p class="negative"><%= flash[:notice] %></p>
+    </div>
+
+  <% end %>  
+
   <div class="login_section_content">
 
     <div class="login-txt-box">

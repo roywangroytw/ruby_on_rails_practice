@@ -5,7 +5,7 @@ class AccountsController < ApplicationController
     end
 
     def registering
-    
+
     @account = Account.new(account_params)
 
         if @account.save
@@ -21,6 +21,8 @@ class AccountsController < ApplicationController
 
     def account_checking
 
+        @account = Account.new
+
         user = Account.login(account_params)
 
         if user
@@ -28,9 +30,11 @@ class AccountsController < ApplicationController
             flash[:notice] = "Welcome back #{user.first_name}, good luck with your learning!"
             redirect_to "/"
         else
-            flash[:notice] = "Login has failed, please try again"
-            redirect_to "/"
+            # flash[:notice] = "Login has failed, please try again"
+            # redirect_to "/"
             # render html: "User not found!"
+            flash[:notice] = "Login has failed, please try again"
+            render :login
         end    
     end
 
