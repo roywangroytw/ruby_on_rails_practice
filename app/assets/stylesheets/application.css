@@ -285,7 +285,7 @@
     background-color: rgb(255, 255, 255);
     color: rgb(126, 76, 219);
     font-size: 1.3rem;
-    padding: 50px 20px;
+    padding: 30px 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.562), -10px -10px 0px #8E54E9, 10px 10px 0px #4776E6 ;
     position: relative;
@@ -301,7 +301,7 @@
 .login_section_content input {
     height: 40px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
     font-size: 1.2rem;
@@ -336,7 +336,7 @@
 }
 
 .login-txt-box p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 
 }
 
@@ -370,7 +370,7 @@
     height: 30px;
     position: absolute;
     z-index: 10;
-    top: 280px;
+    bottom: -15px;
     display: flex;
     justify-content: space-around;
 }
