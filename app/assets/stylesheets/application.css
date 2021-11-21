@@ -45,6 +45,11 @@
     width: 100%;
   } 
 
+input:focus,
+textarea:focus {
+    outline: none;
+}  
+
 /* NavBar */
 
 .header {
@@ -107,6 +112,29 @@
     border-radius: 10px;
     margin-left: 5px;
     font-size: 1rem;
+}
+
+.header_search_form {
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.header_search_form input:first-child {
+    border: 1px solid black;
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 1rem;
+}
+
+.header_search_form input:last-child {
+    background-color: rgb(0, 0, 0);
+    line-height: 30px;
+    border-radius: 5px;
+    padding: 0 10px 0 10px;
+    font-size: 1rem;
+    color: white;
 }
 
 
