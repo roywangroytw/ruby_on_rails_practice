@@ -9,6 +9,7 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
 
         if @account.save
+            flash[:notice] = "Good choice #{@account.first_name}! Now let's keep up the momentum and start exploring :) Have fun!"
             redirect_to "/"
         else
             render :sign_up 
