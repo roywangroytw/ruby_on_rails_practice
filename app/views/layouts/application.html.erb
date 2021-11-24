@@ -11,23 +11,8 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="logo">
-        <%= image_tag('Tazhuu (1).png') %>
-      </div>
-      <form class="header_search_form" action="">
-        <input type="text">
-        <input type="submit" value="Search">
-      </form>
-      <nav class="navbox">
-        <a class="nav-link" href="/about">About</a>
-        <a class="nav-link" href="">Courses</a>
-        <a class="nav-link" href="/contact">Contact</a>
-        <a class="nav-link" href="/login">Login</a>
-        <a class="nav-link" href="/sign_up">SignUp</a>
-      </nav>
-    </header>
 
+    <%= render 'shared/header_nav' %>
     <%= yield %>
 
   </body>
